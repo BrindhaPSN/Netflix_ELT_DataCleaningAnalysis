@@ -15,14 +15,14 @@ python3 --version
 
 to excecute : python filename.py
 
-# Create a virtual environment
+### Create a virtual environment
 python3 -m venv netflixEnv
 
-# Activate the environment
+### Activate the environment
 source netflixEnv/bin/Activate
 
-# Install pandas,pymssql,sqlalchemy
+### Install pandas,pymssql,sqlalchemy
 
 pip install pandas,sqlalchemy,pymssql
 
-# use pip freeze - to view installed packages
+### use pip freeze - to view installed packages
