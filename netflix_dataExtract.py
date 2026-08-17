@@ -18,7 +18,7 @@ from sqlalchemy.engine import URL
 connection_url = URL.create(
     "mssql+pymssql",
     username="userZ",
-    password="Password",                       # Must match MSSQL_SA_PASSWORD above
+    password="assword",                       # Must match MSSQL_SA_PASSWORD above
     host="localhost",                             # Localhost points to your mapped Docker port
     port=1433,
     database="master",                            # Connect to default system DB first
@@ -60,3 +60,13 @@ print('Max length of listed_in: ',max(df.listed_in.str.len()))
 print('Max length of description: ',max(df.description.str.len()))
 
 # print(df.loc[df.show_id=='s5023'])
+
+
+# Pulling the cleaned data into file
+query = 'select * from [master].[dbo].[tNetflix]'
+
+cleaned_df = pd.read_sql(query,conn)
+
+df.to_csv("cleaned_data.csv", index=False, encoding="utf-8")
+
+print("Export complete successfully!")
